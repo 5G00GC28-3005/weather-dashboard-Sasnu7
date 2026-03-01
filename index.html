@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" crossorigin="anonymous"></script>
+  
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="app-header">
+    <h1>⛅Weather Dashboard</h1>
+    <p class="subtitle">Historical hourly data from Open‑Meteo</p>
+  </header>
+
+  <main class="container">
+    
+    <section class="controls">
+      <div class="coords">
+        <label>
+          Latitude
+          <input id="lat" type="number" step="any" value="61.4991" />
+        </label>
+        <label>
+          Longitude
+          <input id="lon" type="number" step="any" value="23.7871" />
+        </label>
+        <button id="refresh" class="btn primary" aria-label="Refresh data">Refresh</button>
+      </div>
+      <div class="status-row">
+        <div class="place" id="place">—</div>
+        <div class="status-line" id="status">Ready</div>
+      </div>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-temperature" data-view="temperature">🌡️ Temperature</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-wind" data-view="wind">💨 Wind</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="panel-humidity" data-view="humidity">💧 Humidity</button>
+    </nav>
+
+    <section class="panels">
+      
+      <div id="panel-temperature" class="panel active" role="tabpanel">
+        <div class="cards" id="cards-temperature"></div>
+        <div class="chart-wrap">
+          <canvas id="chart-temperature" height="240"></canvas>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Temperature</th>
+              </tr>
+            </thead>
+            <tbody id="table-temperature"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="panel-wind" class="panel" role="tabpanel" hidden>
+        <div class="cards" id="cards-wind"></div>
+        <div class="chart-wrap">
+          <canvas id="chart-wind" height="240"></canvas>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Wind Speed</th>
+              </tr>
+            </thead>
+            <tbody id="table-wind"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="panel-humidity" class="panel" role="tabpanel" hidden>
+        <div class="cards" id="cards-humidity"></div>
+        <div class="chart-wrap">
+          <canvas id="chart-humidity" height="240"></canvas>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Relative Humidity</th>
+              </tr>
+            </thead>
+            <tbody id="table-humidity"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <medium>
+      © 2026 • Sasnu Fernando • API Source: <a href="https://open-meteo.com/">Open‑Meteo</a>.
+    </medium>
+  </footer>
+
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="spinner"></div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
