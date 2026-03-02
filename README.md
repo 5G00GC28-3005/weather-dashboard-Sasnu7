@@ -19,8 +19,3 @@
 * [cite_start]**APIs:** * Open-Meteo Forecast API [cite: 30, 32]
   * OpenStreetMap Nominatim API (Reverse Geocoding)
 
-## ⚙️ Installation & Setup
-
-1. Clone the repository to your local machine:
-   ```bash
-   git clone [https://github.com/your-username/weather-dashboard.git](https://github.com/your-username/weather-dashboard.git)
